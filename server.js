@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
 const webpack = require('webpack');
+const open = require('open');
 const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
 const compiler = webpack(config);
 
@@ -9,9 +11,10 @@ const port = 3000;
 const app = express();
 
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
+  noInfo: true, publicPath: config.output.publicPath
 }));
 
+app.use(webpackHotMiddleware(compiler));
 
 // app.use(express.static('src'));
 
@@ -20,5 +23,6 @@ app.use(webpackDevMiddleware(compiler, {
 // })
 
 app.listen(port, () => {
-  console.log('App is listening on port 3000');
+  open('http://localhost:' + port);
+  console.log(`App is listening on port ${port}`);
 })
