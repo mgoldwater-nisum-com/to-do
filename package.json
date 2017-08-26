@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest"
+    "start": "babel-node server.js",
+    "test": "jest",
+    "lint": "esw *webpack.config.js src/** server.js --watch --ext .js,.jsx"
   },
   "jest": {
     "transform": {
@@ -17,13 +18,16 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "enzyme": "^2.9.1",
+    "eslint": "^4.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-watch": "^3.1.2",
     "express": "^4.15.4",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^20.0.4",
