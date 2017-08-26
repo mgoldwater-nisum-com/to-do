@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'enzyme';
+import {render, shallow} from 'enzyme';
 import Header from './Header';
 
 test('1 + 1 is 2', () => {
@@ -7,7 +7,7 @@ test('1 + 1 is 2', () => {
 });
 
 test('Header component should render', () => {
-  expect(<Header/>).toMatchSnapshot();
+  expect(shallow(<Header/>).exists()).toBe(true);
 });
 
 test('Header component should display the heading todos', () => {
