@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: ['webpack-hot-middleware/client?reload=true', './src/index.js'],
+  entry: ['webpack-hot-middleware/client?reload=true', './src/index.jsx'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '/dist'),
@@ -19,5 +19,8 @@ module.exports = {
     new HtmlWebpackPlugin({
     template: 'src/index.html'
   }),
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
 }
