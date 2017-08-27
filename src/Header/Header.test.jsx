@@ -12,4 +12,4 @@ test('Header component should render', () => {
 
 test('Header component should display the heading todos', () => {
   expect(render(<Header/>).text()).toEqual('todos');
-})
+});

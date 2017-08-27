@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node server.js",
     "test": "jest",
-    "lint": "esw *webpack.config.js src/** server.js --watch --ext .js,.jsx"
+    "lint": "esw webpack.config.* src server.js --watch --ext .js,.jsx"
   },
   "jest": {
     "transform": {
@@ -22,8 +22,9 @@
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
     "enzyme": "^2.9.1",
     "eslint": "^4.5.0",
     "eslint-plugin-react": "^7.3.0",
