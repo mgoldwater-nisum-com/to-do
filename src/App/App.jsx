@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../Header/Header';
-import AddToDo from '../AddToDo/AddToDo';
-import ToDos from '../ToDos/ToDos';
+import Header from '../Header';
+import AddToDo from '../AddToDo';
+import ToDos from '../ToDos';
 
 const App = () => (
   <div>

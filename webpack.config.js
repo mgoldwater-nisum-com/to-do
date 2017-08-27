@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import DirectoryNamedWebpackPlugin from 'directory-named-webpack-plugin';
 
 export default {
   entry: ['webpack-hot-middleware/client?reload=true', './src/index.jsx'],
@@ -22,6 +23,9 @@ export default {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    plugins: [
+      new DirectoryNamedWebpackPlugin()
+    ]
   }
 };
