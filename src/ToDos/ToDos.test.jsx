@@ -4,7 +4,7 @@ import ToDos from './ToDos';
 import ToDo from './ToDo/ToDo';
 
 test('Todos component renders', () => (
-  expect(shallow(<ToDos/>).exists()).toBe(true)
+  expect(shallow(<ToDos toDoList={['bla']}/>).exists()).toBe(true)
 ));
 
 test('ToDo is called for each item in the toDoList', () => {

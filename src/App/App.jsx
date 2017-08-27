@@ -8,7 +8,7 @@ const App = () => (
   <div>
     <Header/>
     <AddToDo/>
-    <ToDos/>
+    <ToDos toDoList={['test']}/>
     <FilterToDos/>
   </div>
 );
