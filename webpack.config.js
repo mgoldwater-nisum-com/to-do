@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import DirectoryNamedWebpackPlugin from 'directory-named-webpack-plugin';
 
 export default {
   entry: ['webpack-hot-middleware/client?reload=true', './src/index.jsx'],
@@ -21,5 +20,8 @@ export default {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-  ]
+  ],
+  resolve: {
+  extensions: ['.js', '.jsx']
+}
 };
