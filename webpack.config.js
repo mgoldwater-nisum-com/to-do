@@ -21,11 +21,5 @@ export default {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-  ],
-  resolve: {
-    extensions: ['.js', '.jsx'],
-    plugins: [
-      new DirectoryNamedWebpackPlugin()
-    ]
-  }
+  ]
 };
