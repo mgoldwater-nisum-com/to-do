@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node server.js",
-    "test": "jest",
+    "test": "jest --watch",
     "lint": "esw webpack.config.* src server.js --watch --ext .js,.jsx"
   },
   "jest": {
