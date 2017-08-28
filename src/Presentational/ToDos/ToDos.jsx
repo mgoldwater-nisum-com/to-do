@@ -5,15 +5,19 @@ import PropTypes from 'prop-types';
 const ToDos = (props) => {
   return (
     <ul>
-      {props.toDoList && props.toDoList.map( (item, i) => (
-        <ToDo key={i} item={item} />
+      {props.toDoList && props.toDoList.map( (item) => (
+        <ToDo key={item.id} item={item} />
       ))}
     </ul>
   );
 };
 
 ToDos.propTypes = {
-  toDoList: PropTypes.array.isRequired
+  toDoList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    completed: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired
+  })).isRequired
 };
 
 export default ToDos;

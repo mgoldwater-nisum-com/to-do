@@ -8,7 +8,7 @@ const App = () => (
   <div>
     <Header/>
     <AddToDo/>
-    <ToDos toDoList={['test']}/>
+    <ToDos toDoList={[{id: 0, completed: false, text: 'test'}]}/>
     <FilterToDos/>
   </div>
 );
