@@ -9,9 +9,9 @@ const modifyToDoList = (state={toDosInOrder: [], allToDos: {} }, action) => {
         }}
       });
       return Object.assign(newState, {toDosInOrder: [...newState.toDosInOrder, newState.allToDos[action.id]]});
-
+    default: 
+      return state;
   }
-  return state;
 }
 
 export default modifyToDoList;
