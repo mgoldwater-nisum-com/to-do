@@ -1,4 +1,4 @@
-const visibleToDos = (state, action) => {
+const visibleToDos = (state='All', action) => {
   switch (action.type) {
     case 'TOGGLE_FILTER':
       return {
