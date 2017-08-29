@@ -6,7 +6,7 @@ test('returns the default state when no argument is passed in for state', () => 
   expect(setup()).toEqual({toDosInOrder: [], allToDos: {} })
 ));
 
-test('when type is ADD_TO_DO it adds a to do to the allToDos object and that to do is referenced at the end of the toDosInOrder array', () => {
+test('when type is ADD_TO_DO it adds a to do to the allToDos object and that todo id is stored at the end of the toDosInOrder array', () => {
   const initialState = setup();
   const action = {type: 'ADD_TO_DO', id: 0, text: 'shower'};
   let newState = modifyToDoList(initialState, action);
@@ -17,9 +17,17 @@ test('when type is ADD_TO_DO it adds a to do to the allToDos object and that to 
       completed: false,
       id: action.id
     }
-  }, toDosInOrder: [newState.allToDos[action.id]]  
+  }, toDosInOrder: [action.id]  
   })
 })
+
+// test('when type is TOGGLE_COMPLETION it changes the value of a todos completed property from false to true or vice versa', () => {
+//   const initialState = setup();
+//   const toDoListOfOneToDo = modifyToDoList(initialState, {type: 'ADD_TO_DO', id: 0, text: 'wash the dishes'})
+//   expect(modifyToDoList(toDoListOfOneToDo, {type: 'TOGGLE_COMPLETION', id: 0})).toEqual({toDosInOrder: [{id: 0, text: 'wash the dishes', completed: true}], allToDos: {0: {id: 0, text: 'wash the dishes', completed: true}}});
+  
+//   // expect(modifyToDoList(toDoListOfOneToDo, {type: 'TOGGLE_COMPLETION', id: 0})).toEqual({toDosInOrder: [toDoListOfOneToDo.allToDos], allToDos: {id: 0, text: 'wash the dishes', completed: false}});
+// });
 
 test('returns the current state when state is not modified', () => {
   const state = setup();

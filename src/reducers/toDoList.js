@@ -1,14 +1,22 @@
 const modifyToDoList = (state={toDosInOrder: [], allToDos: {} }, action) => {
   switch(action && action.type) {
     case 'ADD_TO_DO':
-      const newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         allToDos: {...state.allToDos, [action.id]: {
           id: action.id,
           completed: false,
           text: action.text
-        }}
-      });
-      return Object.assign(newState, {toDosInOrder: [...newState.toDosInOrder, newState.allToDos[action.id]]});
+        }}, toDosInOrder: [...state.toDosInOrder, action.id]}
+      );
+    // case 'TOGGLE_COMPLETION': 
+    //   return {...state, allToDos: {
+    //     ...state.allToDos,
+    //     [action.id]: {
+    //       ...state.allToDos[action.id],
+    //       completed: !state.allToDos[action.id].completed
+    //     }
+    //   }}
+    //   break;
     default: 
       return state;
   }
