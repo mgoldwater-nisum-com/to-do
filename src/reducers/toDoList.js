@@ -15,10 +15,10 @@ const modifyToDoList = (state={toDosInOrder: [], allToDos: {} }, action) => {
           ...state.allToDos[action.id],
           completed: !state.allToDos[action.id].completed
         }
-      }}
+      }};
     default: 
       return state;
   }
-}
+};
 
 export default modifyToDoList;
