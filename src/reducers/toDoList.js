@@ -1,7 +1,7 @@
 const modifyToDoList = (state={toDosInOrder: [], allToDos: {} }, action) => {
   switch(action && action.type) {
     case 'ADD_TO_DO':
-      return Object.assign({}, state, {
+      return Object.assign(...state, {
         allToDos: {...state.allToDos, [action.id]: {
           id: action.id,
           completed: false,
