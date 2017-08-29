@@ -8,15 +8,14 @@ const modifyToDoList = (state={toDosInOrder: [], allToDos: {} }, action) => {
           text: action.text
         }}, toDosInOrder: [...state.toDosInOrder, action.id]}
       );
-    // case 'TOGGLE_COMPLETION': 
-    //   return {...state, allToDos: {
-    //     ...state.allToDos,
-    //     [action.id]: {
-    //       ...state.allToDos[action.id],
-    //       completed: !state.allToDos[action.id].completed
-    //     }
-    //   }}
-    //   break;
+    case 'TOGGLE_COMPLETION': 
+      return {...state, toDosInOrder: [...state.toDosInOrder], allToDos: {
+        ...state.allToDos,
+        [action.id]: {
+          ...state.allToDos[action.id],
+          completed: !state.allToDos[action.id].completed
+        }
+      }}
     default: 
       return state;
   }

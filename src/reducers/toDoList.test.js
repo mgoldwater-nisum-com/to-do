@@ -21,13 +21,13 @@ test('when type is ADD_TO_DO it adds a to do to the allToDos object and that tod
   })
 })
 
-// test('when type is TOGGLE_COMPLETION it changes the value of a todos completed property from false to true or vice versa', () => {
-//   const initialState = setup();
-//   const toDoListOfOneToDo = modifyToDoList(initialState, {type: 'ADD_TO_DO', id: 0, text: 'wash the dishes'})
-//   expect(modifyToDoList(toDoListOfOneToDo, {type: 'TOGGLE_COMPLETION', id: 0})).toEqual({toDosInOrder: [{id: 0, text: 'wash the dishes', completed: true}], allToDos: {0: {id: 0, text: 'wash the dishes', completed: true}}});
-  
-//   // expect(modifyToDoList(toDoListOfOneToDo, {type: 'TOGGLE_COMPLETION', id: 0})).toEqual({toDosInOrder: [toDoListOfOneToDo.allToDos], allToDos: {id: 0, text: 'wash the dishes', completed: false}});
-// });
+test('when type is TOGGLE_COMPLETION it changes the value of a todos completed property from false to true or vice versa', () => {
+  const initialState = setup();
+  const toDoListOfOneToDo = modifyToDoList(initialState, {type: 'ADD_TO_DO', id: 0, text: 'wash the dishes'})
+  const toggledOnce = modifyToDoList(toDoListOfOneToDo, {type: 'TOGGLE_COMPLETION', id: 0});
+  expect(toggledOnce).toEqual({toDosInOrder: [0], allToDos: {0: {id: 0, text: 'wash the dishes', completed: true}}});
+  expect(modifyToDoList(toggledOnce, {type: 'TOGGLE_COMPLETION', id: 0})).toEqual({toDosInOrder: [0], allToDos: {0: {id: 0, text: 'wash the dishes', completed: false}}});
+});
 
 test('returns the current state when state is not modified', () => {
   const state = setup();
