@@ -2,14 +2,14 @@ import React from 'react';
 import Header from '../Header/Header';
 import SetUpAddToDo from '../../Container/SetUpAddToDo';
 import SetUpToggle from '../../Container/SetUpToggle';
-import FilterToDos from '../FilterToDos/FilterToDos';
+import SetUpFilter from '../../Container/SetUpFilter';
 
 const App = () => (
   <div>
     <Header/>
     <SetUpAddToDo/>
     <SetUpToggle/>
-    <FilterToDos/>
+    <SetUpFilter/>
   </div>
 );
 
