@@ -6,7 +6,7 @@ const ToDos = (props) => {
   return (
     <ul>
       {props.toDosInOrder && props.toDosInOrder.map( (item) => (
-        <ToDo key={props.toDoList[item].id} item={props.toDoList[item]} />
+        <ToDo onClick={() => props.toggle(props.toDoList[item].id)} key={props.toDoList[item].id} item={props.toDoList[item]} />
       ))}
     </ul>
   );
@@ -15,7 +15,8 @@ const ToDos = (props) => {
 ToDos.propTypes = {
   //Object of objects with numerical keys (well really strings)
   toDoList: PropTypes.any,
-  toDosInOrder: PropTypes.arrayOf(PropTypes.number)
+  toDosInOrder: PropTypes.arrayOf(PropTypes.number),
+  toggle: PropTypes.func.isRequired
 };
 
 export default ToDos;

@@ -1,6 +1,5 @@
-import {dispatch} from 'redux';
 import {connect} from 'react-redux';
-import {toggleToDo} from '../actions/actions';
+import {toggleCompletion} from '../actions/actions';
 import ToDos from '../Presentational/ToDos/ToDos';
 
 const mapStateToProps = (state) => {
@@ -11,7 +10,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  toggleToDo: (id) => dispatch(toggleToDo(id))
+  toggle: (id) => toggleCompletion(id)
 };
 
 const SetUpToggle = connect(mapStateToProps, mapDispatchToProps)(ToDos);

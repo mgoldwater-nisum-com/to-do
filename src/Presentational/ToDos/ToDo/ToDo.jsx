@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ToDo = (props) => (
-  <li>{props.item.text}</li>
+  <li onClick={props.onClick}>{props.item.text}</li>
 );
 
 ToDo.propTypes = {
@@ -10,7 +10,8 @@ ToDo.propTypes = {
     id: PropTypes.number.isRequired,
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default ToDo;

@@ -15,5 +15,5 @@ test('state is passed to connected ToDos component', () => {
 
 test('dispatch toggleToDo is passed to connected ToDos component', () => {
   const wrapper = shallow(<SetUpToggle store={mockStore}/>);
-  expect(wrapper.props().toggleToDo).toBeTruthy();
+  expect(wrapper.props().toggle).toBeTruthy();
 });
