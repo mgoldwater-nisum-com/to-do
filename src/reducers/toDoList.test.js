@@ -19,6 +19,22 @@ test('when type is ADD_TO_DO it adds a to do to the allToDos object and that tod
       }
     }, toDosInOrder: [action.id]  
   });
+  const action2 = {type: 'ADD_TO_DO', id: 1, text: 'shave'};
+  let newState2 = modifyToDoList(newState, action2);
+  expect(newState2).toEqual({
+    allToDos: {
+      0: {
+        text: 'shower',
+        completed: false,
+        id: 0
+      },
+      1: {
+        text: 'shave',
+        completed: false,
+        id: 1
+      }
+    }, toDosInOrder: [0, 1]  
+  });
 });
 
 test('when type is TOGGLE_COMPLETION it changes the value of a todos completed property from false to true or vice versa', () => {
