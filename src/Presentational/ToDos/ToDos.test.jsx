@@ -6,7 +6,7 @@ import ToDo from './ToDo/ToDo';
 test('Todos component renders', () => {
   const theToDoList = {0: {id: 0, completed: false, text: 'bla'}};
   const theToDosInOrder = [0];
-  expect(shallow(<ToDos toDosInOrder={theToDosInOrder} toDoList={theToDoList}/>).exists()).toBe(true)
+  expect(shallow(<ToDos toDosInOrder={theToDosInOrder} toDoList={theToDoList}/>).exists()).toBe(true);
 });
 
 test('ToDo is called for each item in the toDoList', () => {

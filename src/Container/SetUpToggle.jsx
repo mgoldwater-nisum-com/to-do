@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   toggleToDo: (id) => dispatch(toggleToDo(id))
-}
+};
 
 const SetUpToggle = connect(mapStateToProps, mapDispatchToProps)(ToDos);
 

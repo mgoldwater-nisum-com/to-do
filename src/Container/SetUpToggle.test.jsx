@@ -4,7 +4,7 @@ import SetUpToggle from './SetUpToggle';
 import {shallow} from 'enzyme';
 
 
-const initialState = {toDoList: {allToDos: {0: {id: 0, completed: false, text: 'foo'}}, toDosInOrder: [0]}}
+const initialState = {toDoList: {allToDos: {0: {id: 0, completed: false, text: 'foo'}}, toDosInOrder: [0]}};
 const mockStore = ConfigureStore()(initialState);
 
 test('state is passed to connected ToDos component', () => {
