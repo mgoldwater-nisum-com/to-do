@@ -3,7 +3,6 @@ import ToDo from './ToDo/ToDo';
 import PropTypes from 'prop-types';
 
 const ToDos = (props) => {
-  console.log(props.showToDos);
   if (props.showToDos === 'All') {
     return (
       <ul>
@@ -14,12 +13,24 @@ const ToDos = (props) => {
     );
   } else if (props.showToDos === 'Active') {
     return (
-      <div>foo</div>
-    )
+      <ul>
+        {props.toDosInOrder && props.toDosInOrder.filter( (item) => (
+         props.toDoList[item].completed === false
+        )).map( (item) => (
+          <ToDo onClick={() => props.toggle(props.toDoList[item].id)} key={props.toDoList[item].id} item={props.toDoList[item]} />
+        ))}
+      </ul>
+    );
   } else {
     return (
-      <div>bar</div>
-    )
+      <ul>
+        {props.toDosInOrder && props.toDosInOrder.filter( (item) => (
+         props.toDoList[item].completed === true
+        )).map( (item) => (
+          <ToDo onClick={() => props.toggle(props.toDoList[item].id)} key={props.toDoList[item].id} item={props.toDoList[item]} />
+        ))}
+      </ul>
+    );
   } 
 };
 
