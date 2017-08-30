@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../Header/Header';
 import SetUpAddToDo from '../../Container/SetUpAddToDo';
-import ToDos from '../ToDos/ToDos';
+import SetUpToggle from '../../Container/SetUpToggle';
 import FilterToDos from '../FilterToDos/FilterToDos';
 
 const App = () => (
   <div>
     <Header/>
     <SetUpAddToDo/>
-    <ToDos toDoList={[{id: 0, completed: false, text: 'test'}]}/>
+    <SetUpToggle/>
     <FilterToDos/>
   </div>
 );

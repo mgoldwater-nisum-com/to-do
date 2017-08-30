@@ -2,7 +2,6 @@ import React from 'react';
 import App from './App';
 import Header from '../Header/Header';
 import AddToDo from '../AddToDo/AddToDo';
-import ToDos from '../ToDos/ToDos';
 import FilterToDos from '../FilterToDos/FilterToDos';
 import {shallow} from 'enzyme';
 
