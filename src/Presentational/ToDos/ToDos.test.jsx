@@ -3,13 +3,17 @@ import {shallow} from 'enzyme';
 import ToDos from './ToDos';
 import ToDo from './ToDo/ToDo';
 
-test('Todos component renders', () => (
-  expect(shallow(<ToDos toDoList={[{id: 0, completed: false, text: 'bla'}]}/>).exists()).toBe(true)
-));
+test('Todos component renders', () => {
+  const theToDoList = {0: {id: 0, completed: false, text: 'bla'}};
+  const theToDosInOrder = [0];
+  expect(shallow(<ToDos toDosInOrder={theToDosInOrder} toDoList={theToDoList}/>).exists()).toBe(true)
+});
 
 test('ToDo is called for each item in the toDoList', () => {
-  const toDoList = [{id: 0, completed: false, text: 'foo'}];
-  expect(shallow(<ToDos toDoList={toDoList}/>).find(ToDo)).toHaveLength(1);
-  toDoList.push({id: 1, completed: false, text: 'bar'});
-  expect(shallow(<ToDos toDoList={toDoList}/>).find(ToDo)).toHaveLength(2);
+  let toDoList = {0: {id: 0, completed: false, text: 'foo'}};
+  let theToDosInOrder = [0];
+  expect(shallow(<ToDos toDosInOrder={theToDosInOrder} toDoList={toDoList}/>).find(ToDo)).toHaveLength(1);
+  toDoList = {0: {id: 0, completed: false, text: 'foo'}, 1: {id: 1, completed: false, text: 'bar'}};
+  theToDosInOrder = [0, 1];
+  expect(shallow(<ToDos toDosInOrder={theToDosInOrder} toDoList={toDoList}/>).find(ToDo)).toHaveLength(2);
 });
