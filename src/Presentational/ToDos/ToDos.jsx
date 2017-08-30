@@ -16,7 +16,8 @@ ToDos.propTypes = {
   //Object of objects with numerical keys (well really strings)
   toDoList: PropTypes.any,
   toDosInOrder: PropTypes.arrayOf(PropTypes.number),
-  toggle: PropTypes.func.isRequired
+  toggle: PropTypes.func.isRequired,
+  showToDos: PropTypes.string.isRequired
 };
 
 export default ToDos;
