@@ -5,7 +5,8 @@ import ToDos from '../../Presentational/ToDos/ToDos';
 const mapStateToProps = (state) => {
   return {
     toDoList: state.toDoList.allToDos,
-    toDosInOrder: state.toDoList.toDosInOrder
+    toDosInOrder: state.toDoList.toDosInOrder,
+    showToDos: state.visibleToDos
   };
 };
 

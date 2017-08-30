@@ -1,9 +1,7 @@
 const visibleToDos = (state='All', action) => {
   switch (action.type) {
     case 'TOGGLE_FILTER':
-      return {
-        visible: action.visible
-      };
+      return action.visible
     default:
       return state;
   }
