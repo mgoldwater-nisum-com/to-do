@@ -10,7 +10,7 @@ const theToDosInOrder = [0, 1];
 
 const setup = (visibility) => (
   shallow(<ToDos showToDos={visibility} toggle={toggle} toDosInOrder={theToDosInOrder} toDoList={theToDoList}/>)
-)
+);
 
 test('Todos component renders', () => {
   const wrapper = setup('foo');
@@ -20,14 +20,4 @@ test('Todos component renders', () => {
 test('ToDo is called for each item in the toDoList when the  visibility setting is All', () => {
   const wrapper = setup('All');
   expect(wrapper.find(ToDo)).toHaveLength(2);
-});
-
-test('ToDo is called for each active item in the toDoList when the  visibility setting is Active', () => {
-  const wrapper = setup('Active');
-  expect(wrapper.find(ToDo).html()).toEqual('<li>foo</li>')
-});
-
-test('ToDo is called for each active item in the toDoList when the  visibility setting is Completed', () => {
-  const wrapper = setup('Completed');
-  expect(wrapper.find(ToDo).html()).toEqual('<li>bar</li>')
 });
