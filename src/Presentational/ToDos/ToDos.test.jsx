@@ -4,19 +4,30 @@ import ToDos from './ToDos';
 import ToDo from './ToDo/ToDo';
 
 const toggle = jest.fn();
-const sampleString = 'bar';
+
+const theToDoList = {0: {id: 0, completed: false, text: 'foo'}, 1: {id: 1, completed: true, text: 'bar'}};
+const theToDosInOrder = [0, 1];
+
+const setup = (visibility) => (
+  shallow(<ToDos showToDos={visibility} toggle={toggle} toDosInOrder={theToDosInOrder} toDoList={theToDoList}/>)
+)
 
 test('Todos component renders', () => {
-  const theToDoList = {0: {id: 0, completed: false, text: 'bla'}};
-  const theToDosInOrder = [0];
-  expect(shallow(<ToDos showToDos={sampleString} toggle={toggle} toDosInOrder={theToDosInOrder} toDoList={theToDoList}/>).exists()).toBe(true);
+  const wrapper = setup('foo');
+  expect(wrapper.exists()).toBe(true);
 });
 
-test('ToDo is called for each item in the toDoList', () => {
-  let toDoList = {0: {id: 0, completed: false, text: 'foo'}};
-  let theToDosInOrder = [0];
-  expect(shallow(<ToDos showToDos={sampleString} toggle={toggle} toDosInOrder={theToDosInOrder} toDoList={toDoList}/>).find(ToDo)).toHaveLength(1);
-  toDoList = {0: {id: 0, completed: false, text: 'foo'}, 1: {id: 1, completed: false, text: 'bar'}};
-  theToDosInOrder = [0, 1];
-  expect(shallow(<ToDos showToDos={sampleString} toggle={toggle} toDosInOrder={theToDosInOrder} toDoList={toDoList}/>).find(ToDo)).toHaveLength(2);
+test('ToDo is called for each item in the toDoList when the  visibility setting is All', () => {
+  const wrapper = setup('All');
+  expect(wrapper.find(ToDo)).toHaveLength(2);
+});
+
+test('ToDo is called for each active item in the toDoList when the  visibility setting is Active', () => {
+  const wrapper = setup('Active');
+  expect(wrapper.find(ToDo).html()).toEqual('<li>foo</li>')
+});
+
+test('ToDo is called for each active item in the toDoList when the  visibility setting is Completed', () => {
+  const wrapper = setup('Completed');
+  expect(wrapper.find(ToDo).html()).toEqual('<li>bar</li>')
 });
