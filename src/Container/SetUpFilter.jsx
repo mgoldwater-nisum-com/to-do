@@ -4,7 +4,7 @@ import FilterToDos from '../Presentational/FilterToDos/FilterToDos';
 
 const mapDispatchToProps = {
   toggleFilter: (filter) => toggleFilter(filter) 
-}
+};
 
 const SetUpFilter = connect(null, mapDispatchToProps)(FilterToDos);
 

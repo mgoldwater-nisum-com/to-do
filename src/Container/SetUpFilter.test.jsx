@@ -9,4 +9,4 @@ const mockStore = ConfigureStore()(initialState);
 test('dispatch toggleFilter is passed to connected FilterToDos component', () => {
   const wrapper = shallow(<SetUpFilter store={mockStore}/>);
   expect(wrapper.props().toggleFilter).toBeTruthy();
-})
+});

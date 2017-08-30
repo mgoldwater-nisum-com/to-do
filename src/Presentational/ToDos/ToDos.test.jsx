@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import ToDos from './ToDos';
 import ToDo from './ToDo/ToDo';
 
-const toggle = jest.fn()
+const toggle = jest.fn();
 
 test('Todos component renders', () => {
   const theToDoList = {0: {id: 0, completed: false, text: 'bla'}};
