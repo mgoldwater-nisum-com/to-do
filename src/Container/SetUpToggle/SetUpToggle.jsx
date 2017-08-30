@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import {toggleCompletion} from '../actions/actions';
-import ToDos from '../Presentational/ToDos/ToDos';
+import {toggleCompletion} from '../../actions/actions';
+import ToDos from '../../Presentational/ToDos/ToDos';
 
 const mapStateToProps = (state) => {
   return {

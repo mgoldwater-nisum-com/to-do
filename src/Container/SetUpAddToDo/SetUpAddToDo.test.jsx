@@ -1,7 +1,7 @@
 import React from 'react';
 import SetUpAddToDo from './setUpAddToDo';
 import configureStore from 'redux-mock-store';
-import AddToDo from  '../Presentational/AddToDo/AddToDo.jsx';
+import AddToDo from  '../../Presentational/AddToDo/AddToDo.jsx';
 import {shallow} from 'enzyme';
 
 let mockStore = configureStore();

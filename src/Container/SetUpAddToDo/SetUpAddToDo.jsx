@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import {addToDo as newToDo} from '../actions/actions';
-import AddToDo from '../Presentational/AddToDo/AddToDo.jsx';
+import {addToDo as newToDo} from '../../actions/actions.js';
+import AddToDo from '../../Presentational/AddToDo/AddToDo.jsx';
 
 const mapDispatchToProps = {
   dispatchToDo: newToDo
