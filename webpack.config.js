@@ -14,6 +14,7 @@ export default {
       { test: /\.js$|\.jsx$/, exclude: /node_modules/, loader: 'babel-loader' }
     ]
   },
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
