@@ -7,7 +7,6 @@ const AddToDo = (props) => {
   return (
     <form className={style.background} onSubmit={e => {
       e.preventDefault();
-      console.log(inputValue.value); // eslint-disable-line no-console
       props.dispatchToDo(inputValue.value);
       inputValue.value = '';
     }}>
