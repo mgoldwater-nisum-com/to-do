@@ -4,7 +4,7 @@ import style from './ToDo.css';
 
 const ToDo = (props) => (
   <div className={`${style.outerList} ${style.group}`}>
-    <div className={`${style.circle} ${props.item.completed ? style.circleCompleted : null}`}></div>
+    <div className={`${style.circle} ${props.item.completed ? style.circleCompleted : null}`} onClick={props.onClick}></div>
     <li className={`${style.listItem} ${props.item.completed ? style.listItemCompleted : null}`} onClick={props.onClick}>{props.item.text}</li>
   </div>
 );
