@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import style from './ToDo.css';
 
 const ToDo = (props) => (
-  <li className={style.removeBullets} onClick={props.onClick}>{props.item.text}</li>
+  <div className={`${style.outerList} ${style.group}`}>
+    <div className={style.circle}></div>
+    <li className={`${style.listItem}`} onClick={props.onClick}>{props.item.text}</li>
+  </div>
 );
 
 ToDo.propTypes = {
