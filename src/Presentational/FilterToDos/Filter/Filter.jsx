@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import style from './Filter.css';
 
 const Filter = (props) => (
-  <div className={style.size} onClick={() => props.onClick(props.children)}>{props.children}</div>
+  <div className={`${style.size} ${props.stuff}`} onClick={() => props.onClick(props.children)}>{props.children}</div>
 );
 
 Filter.propTypes = {

@@ -1,4 +1,7 @@
 .size {
   display: inline-block;
   width: calc(100% / 3);
+  color: #777;
+  font-size: 14px;
+  line-height: 20px;
 }
