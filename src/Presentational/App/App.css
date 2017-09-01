@@ -21,10 +21,7 @@ html {
   font-family: "Helvetica Neue";
 }
 
-.toDoBackground {
+.appearance {
   background: #fff;
+  font-weight: 300;
 }
-
-/* .size * {
-  width: 100vw;
-} */

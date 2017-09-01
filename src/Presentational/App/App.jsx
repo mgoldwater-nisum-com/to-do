@@ -12,7 +12,7 @@ const App = () => (
   <div className={`${style.font} ${style.root}`}>
     <div className={`${style.border}`}>
       <Header/>
-      <div className={`${style.size} ${style.toDoBackground}`}>
+      <div className={`${style.appearance}`}>
         <SetUpAddToDo/>
         <SetUpToggle/>
         <SetUpFilter/>
