@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './AddToDo.css';
 
 const AddToDo = (props) => {
   let inputValue;
   return (
-    <form onSubmit={e => {
+    <form className={style.background} onSubmit={e => {
       e.preventDefault();
       console.log(inputValue.value); // eslint-disable-line no-console
       props.dispatchToDo(inputValue.value);
       inputValue.value = '';
     }}>
-      <input type="text" ref={input => {
+      <input className={style.size} placeholder="What needs to be done?"type="text" ref={input => {
         inputValue = input;
       }}/>
     </form>

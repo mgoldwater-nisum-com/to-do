@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './ToDo.css';
 
 const ToDo = (props) => (
-  <li onClick={props.onClick}>{props.item.text}</li>
+  <li className={style.removeBullets} onClick={props.onClick}>{props.item.text}</li>
 );
 
 ToDo.propTypes = {

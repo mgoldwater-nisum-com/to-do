@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './Filter.css';
 
 const Filter = (props) => (
-  <a onClick={() => props.onClick(props.children)}>{props.children}</a>
+  <div className={style.size} onClick={() => props.onClick(props.children)}>{props.children}</div>
 );
 
 Filter.propTypes = {
