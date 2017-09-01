@@ -10,7 +10,7 @@ const AddToDo = (props) => {
       props.dispatchToDo(inputValue.value);
       inputValue.value = '';
     }}>
-      <input className={style.size} placeholder="What needs to be done?"type="text" ref={input => {
+      <input className={style.input} placeholder="What needs to be done?"type="text" ref={input => {
         inputValue = input;
       }}/>
     </form>

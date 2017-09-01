@@ -2,6 +2,8 @@
   background: green;
 }
 
-.size {
+.input {
   width: 100%;
+  outline: none;
+  height: 65px;
 }
