@@ -1,5 +1,9 @@
 let id = 0;
 
+export const changeId = () => {
+  id++;
+}
+
 export const addToDo = (text) => {
   return {
     type: 'ADD_TO_DO',
