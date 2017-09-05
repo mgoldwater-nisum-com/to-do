@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node server.js",
+    "start": "babel-node dev-server.js",
     "test": "jest --watch",
-    "lint": "esw webpack.config.* src server.js --watch --ext .js,.jsx"
+    "lint": "esw webpack.config.* src dev-server.js --watch --ext .js,.jsx"
   },
   "jest": {
     "transform": {

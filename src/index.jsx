@@ -5,6 +5,10 @@ import RootReducer from './reducers/rootReducer';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
+fetch('/todos').then((results) => {
+  console.log(results.json());
+});
+
 let store = createStore(
   RootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

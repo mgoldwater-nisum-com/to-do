@@ -21,6 +21,10 @@ app.use(webpackHotMiddleware(compiler));
 //   res.sendFile(path.join(__dirname, 'src/index.html'));
 // })
 
+app.get('/todos', (req, res) => {
+  res.send('yo');
+});
+
 app.listen(port, () => {
   open('http://localhost:' + port);
   console.log(`App is listening on port ${port}`); // eslint-disable-line no-console
