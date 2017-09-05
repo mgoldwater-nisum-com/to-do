@@ -3,7 +3,11 @@ import ConfigureStore from 'redux-mock-store';
 import SetUpFilter from './SetUpFilter';
 import {shallow} from 'enzyme';
 
-const initialState = {toDoList: {allToDos: {0: {id: 0, completed: false, text: 'foo'}}, toDosInOrder: [0], visibleToDos: 'All'}};
+const initialState = {
+  toDoList: {
+    allToDos: {0: {id: 0, completed: false, text: 'foo'} }, 
+    toDosInOrder: [0]}, 
+  visibleToDos: 'All'};
 const mockStore = ConfigureStore()(initialState);
 
 test('state is passed to FilterToDos component', () => {
