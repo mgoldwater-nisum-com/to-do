@@ -1,4 +1,5 @@
 import {app, port} from './server';
+import open from 'open';
 
 app.listen(port, () => {
   open('http://localhost:' + port);

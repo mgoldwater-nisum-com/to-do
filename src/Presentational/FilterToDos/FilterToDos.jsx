@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const FilterToDos = (props) => (
   <div>
-    {console.log(props.visible)}
     <Filter visible={props.visible} onClick={props.toggleFilter}>All</Filter>
     <Filter visible={props.visible} onClick={props.toggleFilter}>Active</Filter>
     <Filter visible={props.visible} onClick={props.toggleFilter}>Completed</Filter>
