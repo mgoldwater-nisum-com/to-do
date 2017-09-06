@@ -20,3 +20,11 @@ export const getToDos = (cb) => {
     cb(todoList);
   });
 };
+
+export const addToDo = ({id, completed, text}, res) => {
+  const newToDo = new todos({id, completed, text});
+  newToDo.save( (err) => {
+    if (err) return console.error(err); // eslint-disable-line no-console
+    res.sendStatus(200);
+  });
+};

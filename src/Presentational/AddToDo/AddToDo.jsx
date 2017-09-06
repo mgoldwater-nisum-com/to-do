@@ -7,7 +7,14 @@ const AddToDo = (props) => {
   return (
     <form className={style.background} onSubmit={e => {
       e.preventDefault();
-      props.dispatchToDo(inputValue.value);
+      const createdAction = props.dispatchToDo(inputValue.value);
+      fetch('/todos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({...createdAction, completed: false})
+      });
       inputValue.value = '';
     }}>
       <input className={style.input} placeholder="What needs to be done?"type="text" ref={input => {
