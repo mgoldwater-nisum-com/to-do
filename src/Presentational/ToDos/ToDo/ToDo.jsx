@@ -1,13 +1,33 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import style from './ToDo.css';
 
-const ToDo = (props) => (
-  <div className={`${style.outerList} ${style.group}`}>
-    <div className={`${style.circle} ${props.item.completed ? style.circleCompleted : null}`} onClick={props.onClick}></div>
-    <li className={`${style.listItem} ${props.item.completed ? style.listItemCompleted : null}`} onClick={props.onClick}>{props.item.text}</li>
-  </div>
-);
+class ToDo extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    fetch('/todos', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id: this.props.item.id, completed: this.props.item.completed})
+    });
+    this.props.onClick();
+  }
+
+  render() {
+    return (
+      <div className={`${style.outerList} ${style.group}`}>
+        <div className={`${style.circle} ${this.props.item.completed ? style.circleCompleted : null}`} onClick={this.handleClick}></div>
+        <li className={`${style.listItem} ${this.props.item.completed ? style.listItemCompleted : null}`} onClick={this.handleClick}>{this.props.item.text}</li>
+      </div>
+    );
+  }
+}  
 
 ToDo.propTypes = {
   item: PropTypes.shape({

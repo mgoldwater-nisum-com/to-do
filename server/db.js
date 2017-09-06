@@ -28,3 +28,7 @@ export const addToDo = ({id, completed, text}, res) => {
     res.sendStatus(200);
   });
 };
+
+export const toggleToDoCompletion = ({id, completed}, cb) => {
+  todos.findOneAndUpdate({id}, {completed: !completed}, cb);
+};

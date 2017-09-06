@@ -4,7 +4,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import bodyParser from 'body-parser';
 import config from '../webpack.config.js';
-import {getToDos, addToDo} from './db';
+import {getToDos, addToDo, toggleToDoCompletion} from './db';
 const compiler = webpack(config);
 
 export const port = 3000;
@@ -26,6 +26,12 @@ app.get('/todos', (req, res) => {
 
 app.post('/todos', (req, res) => {
   addToDo(req.body, res);
+});
+
+app.put('/todos', (req, res) => {
+  toggleToDoCompletion(req.body, () => {
+    res.sendStatus(200);
+  });
 });
 
 export default app;
