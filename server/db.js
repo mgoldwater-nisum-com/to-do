@@ -1,6 +1,11 @@
 import mongoose from 'mongoose';
-
-mongoose.connect('mongodb://localhost/todoList');
+import {Mockgoose} from 'mockgoose';
+if (process.env.NODE_ENV === 'test') {
+  let mockgoose: Mockgoose = new Mockgoose(mongoose);
+  mongoose.connect('mongodb://localhost/testTodoList');
+} else {
+  mongoose.connect('mongodb://localhost/todoList');
+}
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error')); // eslint-disable-line no-console
 db.once('open', () => {
@@ -8,12 +13,19 @@ db.once('open', () => {
 });
 
 export const todosSchema = mongoose.Schema({
-  id: Number,
-  completed: Boolean,
+  id: {
+    type: Number,
+    unique: true,
+    required: true
+  },
+  completed: {
+    type: Boolean,
+    required: true
+  },
   text: String
 });
 
-const todos = mongoose.model('todos', todosSchema);
+export const todos = mongoose.model('todos', todosSchema);
 
 export const getToDos = (cb) => {
   todos.find( (err, todoList) => {
