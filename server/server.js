@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import express from 'express';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -5,6 +6,9 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import bodyParser from 'body-parser';
 import config from '../webpack.config.js';
 import {getToDos, addToDo, toggleToDoCompletion} from './db';
+
+
+console.log(chalk.green('Starting app in dev mode...')); // eslint-disable-line no-console
 const compiler = webpack(config);
 
 export const port = 3000;
