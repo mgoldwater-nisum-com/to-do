@@ -1,4 +1,4 @@
-import {todos, getToDos} from './db';
+import {todos} from './db';
 
 test('new todo should be invalid if a property is missing', () => {
   const sampleToDo = new todos({id: 'foobar', text: 'bla'});

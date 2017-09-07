@@ -1,7 +1,5 @@
 import mongoose from 'mongoose';
-import {Mockgoose} from 'mockgoose';
 if (process.env.NODE_ENV === 'test') {
-  let mockgoose: Mockgoose = new Mockgoose(mongoose);
   mongoose.connect('mongodb://localhost/testTodoList');
 } else {
   mongoose.connect('mongodb://localhost/todoList');
