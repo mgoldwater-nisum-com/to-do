@@ -1,0 +1,9 @@
+.counter {
+  padding: 5px 0 5px 10px;
+  color: #777;
+  font-size: 14px;
+  height: 20px;
+  display: inline-block;
+  width: calc(100% / 3);
+  background: #00FFF8;
+}
